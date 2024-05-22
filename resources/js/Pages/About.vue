@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import DxButton from 'devextreme-vue/button';
 import { Head } from '@inertiajs/vue3';
+
+const sayHelloWorld = () => {
+    alert('Hello World!');
+};
 </script>
 
 <template>
@@ -15,6 +20,10 @@ import { Head } from '@inertiajs/vue3';
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">You're logged in!</div>
+                    <DxButton
+        text="Click me"
+        @click="sayHelloWorld"
+    />
                 </div>
             </div>
         </div>
