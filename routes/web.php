@@ -13,7 +13,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-Route::inertia('/about', 'About')->name('about');
+Route::inertia('/about', 'About')->middleware(['auth', 'verified'])->name('about');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
