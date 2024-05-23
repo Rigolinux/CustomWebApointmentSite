@@ -15,6 +15,9 @@ Route::get('/', function () {
 });
 Route::inertia('/about', 'About')->name('about');
 Route::inertia('/testCal', 'TestCalendar')->name('testCalendar');
+Route::get('/configset', function () {
+    return Inertia::render('Config/Edit');
+})->name('config.edit');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
