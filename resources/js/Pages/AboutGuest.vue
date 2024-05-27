@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import DxButton from 'devextreme-vue/button';
+import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
@@ -15,7 +14,7 @@ const toggleDark = useToggle(isDark)
 <template>
     <Head title="Dashboard" />
 
-    <AuthenticatedLayout>
+    <GuestLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">About</h2>
         </template>
@@ -34,5 +33,5 @@ const toggleDark = useToggle(isDark)
                 </div>
             </div>
         </div>
-    </AuthenticatedLayout>
+    </GuestLayout>
 </template>

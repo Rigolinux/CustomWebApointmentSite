@@ -20,6 +20,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'IdRole',
+        'Address',
+        'Phone',
+        'ProfilePhoto',
+        'VerifiedAccount'
+        
     ];
 
     /**
@@ -44,4 +50,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected function roles()
+    {
+        return $this->belongsTo(Roles::class, 'IdRole', 'IdRole');
+
+    }
+
+    protected function linkedAccounts()
+    {
+        return $this->hasMany(LinkedAccount::class, 'IdLinkA', 'IdLinkA');
+    }
+
+
 }

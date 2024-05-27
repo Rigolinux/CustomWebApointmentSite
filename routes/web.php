@@ -13,11 +13,8 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-Route::inertia('/about', 'About')->name('about');
-Route::inertia('/testCal', 'TestCalendar')->name('testCalendar');
-Route::get('/configset', function () {
-    return Inertia::render('Config/Edit');
-})->name('config.edit');
+Route::inertia('/about', 'About')->middleware(['auth', 'verified'])->name('about');
+Route::inertia('/aboutg', 'AboutGuest')->middleware(['auth', 'verified'])->name('aboutguest');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
